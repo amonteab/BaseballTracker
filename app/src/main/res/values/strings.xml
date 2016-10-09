@@ -18,4 +18,6 @@
     <string name="strikeButton">Strike</string>
     <string name="ballButton">Ball</string>
     <string name="outButton">Out</string>
+    <string name="startButton">Start</string>
+    <string name="resetButton">Reset</string>
 </resources>

@@ -11,15 +11,19 @@
     tools:context="com.projects.aaronmonteabaro.baseballtracker.MainActivity">
 
     <RelativeLayout
+        android:id="@+id/homeLayout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginRight="2.5dp"
+        android:background="#EEEEEE"
+        android:padding="5dp"
+        android:alpha="1">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/homeRuns"
-            android:text="@string/homeRuns"
             android:textSize="40sp"
             android:layout_marginBottom="6dp"
             />
@@ -28,7 +32,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/homeOuts"
-            android:text="@string/homeOuts"
             android:layout_below="@id/homeRuns"
             android:textSize="32sp"
 
@@ -42,47 +45,37 @@
             android:layout_alignParentRight="true"
             android:textSize="40sp"
             android:layout_marginBottom="6dp"
+            android:background="#EF5350"
             />
 
         <ImageView
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            android:id="@+id/baseballDiamond"
-            android:src="@drawable/diamond"
-            android:layout_centerInParent="true"
-            android:layout_below="@id/homeBanner"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/homeAtBat"
-            android:text="@string/atBatName"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:id="@+id/homeBaseBallDiamond"
+            android:src="@drawable/bbdiamond"
+            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:layout_above="@id/homeBalls"
-            android:textSize="40sp"
-            android:layout_marginBottom="6dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/homeStrikes"
-            android:text="@string/homeStrikes"
-            android:layout_alignParentBottom="true"
-            android:layout_toLeftOf="@id/homeBalls"
-            android:textSize="40dp"
+            android:layout_below="@id/homeBanner"
+            android:background="#EEEEEE"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/homeBalls"
-            android:text="@string/homeBalls"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:layout_marginLeft="6dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/homeStrikes"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@id/homeBalls"
+            android:textSize="40sp"
             />
 
         <RelativeLayout
@@ -95,7 +88,8 @@
                     android:layout_height="56dp"
                     android:id="@+id/runButton"
                     android:text="@string/runButton"
-                    android:textSize="9sp"
+                    style="@style/buttonDesign"
+                    android:onClick="addRun"
                     />
                 <Button
                     android:layout_width="56dp"
@@ -103,8 +97,8 @@
                     android:id="@+id/outButton"
                     android:layout_below="@id/runButton"
                     android:text="@string/outButton"
-                    android:textSize="9sp"
-
+                    style="@style/buttonDesign"
+                    android:onClick="addOut"
                     />
                 <Button
                     android:layout_width="56dp"
@@ -112,7 +106,8 @@
                     android:id="@+id/strikeButton"
                     android:layout_toRightOf="@id/runButton"
                     android:text="@string/strikeButton"
-                    android:textSize="9sp"
+                    style="@style/buttonDesign"
+                    android:onClick="addStrike"
                     />
                 <Button
                     android:layout_width="56dp"
@@ -121,7 +116,8 @@
                     android:layout_toRightOf="@id/outButton"
                     android:layout_below="@id/strikeButton"
                     android:text="@string/ballButton"
-                    android:textSize="9sp"
+                    style="@style/buttonDesign"
+                    android:onClick="addBall"
                     />
 
         </RelativeLayout>
@@ -129,9 +125,97 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/awayLayout"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:layout_marginLeft="2.5dp"
+        android:background="#CFD8DC"
+        android:padding="5dp"
+        android:alpha="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/awayRuns"
+            android:layout_alignParentRight="true"
+            android:textSize="40sp"
+            android:layout_marginBottom="6dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/awayOuts"
+            android:layout_below="@id/awayRuns"
+            android:layout_alignParentRight="true"
+            android:textSize="32sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/awayBanner"
+            android:text="@string/awayBanner"
+            android:textSize="40sp"
+            android:layout_marginBottom="6dp"
+            android:background="#FFF176"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/awayBalls"
+            android:layout_alignParentBottom="true"
+            android:textSize="40sp"
+            android:layout_marginRight="6dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/awayStrikes"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@id/awayBalls"
+            android:textSize="40sp"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
+
+                <Button
+                    android:layout_width="96dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/startButton"
+                    android:text="@string/startButton"
+                    style="@style/buttonDesign"
+                    android:onClick="startCount"
+                    />
+                <Button
+                    android:layout_width="96dp"
+                    android:layout_height="56dp"
+                    style="@style/buttonDesign"
+                    android:id="@+id/resetButton"
+                    android:layout_below="@id/startButton"
+                    android:text="@string/resetButton"
+                    android:onClick="resetCount"
+                    />
+
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:id="@+id/awayBaseballDiamond"
+            android:src="@drawable/bbdiamond"
+            android:layout_below="@+id/awayBanner"
+            android:layout_centerVertical="true"
+            android:background="#CFD8DC"
+            />
 
     </RelativeLayout>
 
