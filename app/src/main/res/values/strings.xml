@@ -1,18 +1,8 @@
 <resources>
     <string name="app_name">Baseball Tracker</string>
-    <string name="atBatName">NULL</string>
 
     <string name="homeBanner">HOME</string>
-    <string name="homeRuns">0</string>
-    <string name="homeOuts">0</string>
-    <string name="homeStrikes">0</string>
-    <string name="homeBalls">0</string>
-
     <string name="awayBanner">AWAY</string>
-    <string name="awayRuns">0</string>
-    <string name="awayOuts">0</string>
-    <string name="awayStrikes">0</string>
-    <string name="awayBalls">0</string>
 
     <string name="runButton">RUN</string>
     <string name="strikeButton">Strike</string>
